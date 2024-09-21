@@ -10,22 +10,22 @@
 
     "metadata": {
       "name": "${mod_name}",
-      "description": "Worldgen mod for Cosmic Reach.",
+      "description": "Screenshot-related features for Cosmic Reach.",
       "contributors": {
         "Author": "Apothicon"
       },
 
       "contact": {
-        "homepage": "https://github.com/Apothicon02/Cosmic-Illumination",
+        "homepage": "https://github.com/Apothicon02/Cosmic-Screening",
         "issues": "https://discord.gg/HHqKa8vTAN",
-        "sources": "https://github.com/Apothicon02/Cosmic-Illumination"
+        "sources": "https://github.com/Apothicon02/Cosmic-Screening"
       },
 
-      "icon": "assets/cosmicillumination/icon.png"
+      "icon": "assets/cosmicscreening/icon.png"
     },
 
     "entrypoints": {
-      "init": "com.apothicon.cosmicillumination.CosmicIllumination"
+      "init": "com.apothicon.cosmicscreening.CosmicScreening"
     },
 
     "depends": [
@@ -40,5 +40,5 @@
     ]
   },
 
-  "mixin": "cosmicillumination.mixins.json"
+  "mixin": "cosmicscreening.mixins.json"
 }
