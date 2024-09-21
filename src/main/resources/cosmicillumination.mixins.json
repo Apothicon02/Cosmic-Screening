@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.apothicon.cosmicillumination.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "GameShaderMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
