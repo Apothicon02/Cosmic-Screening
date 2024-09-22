@@ -1,6 +1,10 @@
 package com.apothicon.cosmicscreening.mixins;
 
 import com.apothicon.cosmicscreening.CosmicScreening;
+import finalforeach.cosmicreach.TickRunner;
+import finalforeach.cosmicreach.gamestates.GameState;
+import finalforeach.cosmicreach.gamestates.PauseMenu;
+import finalforeach.cosmicreach.gamestates.YouDiedMenu;
 import finalforeach.cosmicreach.lang.Lang;
 import finalforeach.cosmicreach.ui.UIElement;
 import finalforeach.cosmicreach.ui.UIObject;
@@ -16,8 +20,10 @@ public abstract class UIElementMixin implements UIObject {
 
     @Inject(at = @At("HEAD"), method = "onClick")
     public void onClick(CallbackInfo ci) {
-        if (text.equals(Lang.get("Return_To_Game")) || text.equals(Lang.get("Return_to_Main_Menu"))) {
-            CosmicScreening.takeScreenshot = 3;
+        if (text.equals(Lang.get("Return_to_Main_Menu")) && (GameState.currentGameState instanceof PauseMenu || GameState.currentGameState instanceof YouDiedMenu)) {
+            TickRunner.INSTANCE.continueTickThread();
+            GameState.switchToGameState(GameState.IN_GAME);
+            CosmicScreening.takeScreenshot = 4;
         }
     }
 }

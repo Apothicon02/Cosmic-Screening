@@ -8,10 +8,11 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GameState.class)
-public class GameStateMixin {
-    @Inject(at = @At("HEAD"), method = "drawUIElements", cancellable = true)
-    public void drawUIElements(CallbackInfo ci) {
-        if (CosmicScreening.takeScreenshot > 0) {
+public abstract class GameStateMixin{
+
+    @Inject(at = @At("HEAD"), method = "switchToGameState", cancellable = true)
+    private static void switchToGameState(CallbackInfo ci) {
+        if (CosmicScreening.takeScreenshot > 1) {
             ci.cancel();
         }
     }
