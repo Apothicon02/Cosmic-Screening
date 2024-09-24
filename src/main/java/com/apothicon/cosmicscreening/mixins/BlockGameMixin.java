@@ -22,7 +22,7 @@ public class BlockGameMixin {
         }
         if (CosmicScreening.takeScreenshot == 1) {
             String screenshot = GameState.currentGameState.takeScreenshot();
-            Gdx.files.absolute(screenshot).copyTo(Gdx.files.absolute(SaveLocation.getAllWorldsSaveFolderLocation().substring(8) + "cosmic-screening/last-world-exit.png"));
+            Gdx.files.absolute(screenshot).copyTo(Gdx.files.absolute(SaveLocation.getScreenshotFolderLocation() + "/cosmic-screening/last-world-exit.png"));
             ChunkSaver.saveWorld(InGame.world);
             GameState.switchToGameState(new MainMenu());
             Gdx.input.setCursorCatched(false);
