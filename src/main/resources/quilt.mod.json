@@ -2,14 +2,14 @@
   "schema_version": 1,
 
   "quilt_loader": {
-    "group": "${mod_group}",
-    "id": "${mod_id}",
-    "version": "${mod_version}",
+    "group": "com.apothicon",
+    "id": "cosmicscreening",
+    "version": "0.1.1",
 
     "intermediate_mappings":"net.fabricmc:intermediary",
 
     "metadata": {
-      "name": "${mod_name}",
+      "name": "Cosmic Screening",
       "description": "Screenshot-related features for Cosmic Reach.",
       "contributors": {
         "Author": "Apothicon"

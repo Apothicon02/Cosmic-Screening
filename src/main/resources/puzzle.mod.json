@@ -1,7 +1,7 @@
 {
-  "id": "${mod_id}",
-  "version": "${mod_version}",
-  "name": "${mod_name}",
+  "id": "cosmicscreening",
+  "version": "0.1.1",
+  "name": "Cosmic Screening",
   "description": "Screenshot-related features for Cosmic Reach.",
   "authors": [
     "Apothicon"
