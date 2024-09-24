@@ -1,0 +1,25 @@
+{
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "Screenshot-related features for Cosmic Reach.",
+  "authors": [
+    "Apothicon"
+  ],
+  "meta": {
+    "icon": "assets/cosmicscreening/icon.png"
+  },
+  "entrypoints": {
+    "preInit": [
+    ],
+    "init": [
+    ]
+  },
+  "mixins": [
+    "cosmicscreening.mixins.json"
+  ],
+  "dependencies": {
+    "cosmic-reach": ">=0.3.1",
+    "puzzle-loader": ">=1.5.8"
+  }
+}
