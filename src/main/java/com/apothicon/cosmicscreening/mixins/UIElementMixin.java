@@ -8,6 +8,7 @@ import finalforeach.cosmicreach.gamestates.YouDiedMenu;
 import finalforeach.cosmicreach.lang.Lang;
 import finalforeach.cosmicreach.ui.UIElement;
 import finalforeach.cosmicreach.ui.UIObject;
+import java.util.Objects;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -20,7 +21,7 @@ public abstract class UIElementMixin implements UIObject {
 
     @Inject(at = @At("HEAD"), method = "onClick")
     public void onClick(CallbackInfo ci) {
-        if (text.equals(Lang.get("Return_to_Main_Menu")) && (GameState.currentGameState instanceof PauseMenu || GameState.currentGameState instanceof YouDiedMenu)) {
+        if (Objects.equals(text, Lang.get("Return_to_Main_Menu")) && (GameState.currentGameState instanceof PauseMenu || GameState.currentGameState instanceof YouDiedMenu)) {
             TickRunner.INSTANCE.continueTickThread();
             GameState.switchToGameState(GameState.IN_GAME);
             CosmicScreening.takeScreenshot = 4;
